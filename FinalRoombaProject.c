@@ -33,7 +33,7 @@ task main()
 
 		if(mode == WALLFOLLOW)
 		{
-		while(timesrun < 5)
+			while(timesrun < 5)
 			{
 					motor[right] = -100;
 					motor[left] = -100;
@@ -42,26 +42,26 @@ task main()
 					motor[left] = -30;
 					wait1Msec(700);
 
-			while(SensorValue(leftbutton) == 0)
-				{
-					motor[right] = 100;
-					motor[left] = 50;
-					wait1Msec(100);
-				}
-				timesrun = timesrun + 1;
-		 	}
-		 	motor[right] = -100;
-			motor[left] = -100;
-			wait1Msec(1000);
-			motor[right] = -100;
-			motor[left] = -30;
-			wait1Msec(1250);
-			mode = STRAIGHT;
-			resetMotorEncoder(right);
-		}
+					while(SensorValue(leftbutton) == 0)
+					{
+						motor[right] = 100;
+						motor[left] = 50;
+						wait1Msec(100);
+					}
+					timesrun = timesrun + 1;
+		 		}
+			 	motor[right] = -100;
+				motor[left] = -100;
+				wait1Msec(1000);
+				motor[right] = -100;
+				motor[left] = -30;
+				wait1Msec(1250);
+				mode = STRAIGHT;
+				resetMotorEncoder(right);
+			}
 
-		 if(mode == STRAIGHT)
-		 {
+		 	if(mode == STRAIGHT)
+		 	{
 			 	motor(right) = 100;
 			  motor(left) = 100;
 			  wait1Msec(100);
